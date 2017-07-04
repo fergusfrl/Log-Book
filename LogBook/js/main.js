@@ -7,6 +7,7 @@ document.getElementById('add').addEventListener('click', function() {
 	if(value) {
 		addItem(value);
 	}
+	document.getElementById('item').value = "";
 });
 
 // Add item to ul
