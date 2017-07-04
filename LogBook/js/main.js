@@ -26,5 +26,7 @@ function addItem(text){
 	buttons.appendChild(remove);
 	item.appendChild(buttons);
 	
+	item.onclick = function() {this.parentNode.removeChild(this);}
+	
 	list.insertBefore(item, list.childNodes[0]);
 }
