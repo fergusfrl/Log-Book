@@ -7,6 +7,7 @@ document.getElementById('add').addEventListener('click', function() {
 	if(value) {
 		addItem(value);
 	}
+	// Resets input value
 	document.getElementById('item').value = "";
 });
 
@@ -27,6 +28,7 @@ function addItem(text){
 	buttons.appendChild(remove);
 	item.appendChild(buttons);
 	
+	// Delete item with delete button
 	item.onclick = function() {this.parentNode.removeChild(this);}
 	
 	list.insertBefore(item, list.childNodes[0]);
