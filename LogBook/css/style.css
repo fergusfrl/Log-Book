@@ -101,20 +101,22 @@
 	}
 	
 	.container {
-		width: 96%;
+		width: 100%;
 		float: left;
 		padding: 5px;
 	}
 	
 	ul.todo {
-		width: 96%;
+		width: 100%;
 		float: left;
 		list-style: none;
 		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 10px;
 	}
 	
 	ul.todo li {
-		width: 96%;
+		width: 100%;
 		min-height: 25px;
 		float: left;
 		font-size: 14px;
@@ -160,13 +162,22 @@
 	}
 	
 	ul.todo li .buttons button:last-of-type:before {
-		content:"";
+		content: "";
 		width: 1px;
 		height: 30px;
 		position: absolute;
-		top: 10px;
+		top: 10;
 		left: 0;
 		background: #edf0f1
+	}
+	
+	ul.todo li .buttons button svg {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 40%;
+		left: 40%;
+		margin: -11px 0 0 -11px;
 	}
 	
 	ul.todo li .buttons button svg .fill {
@@ -177,11 +188,11 @@
 		transition: fill 0.2s ease;
 	}
 	
-	ul.todo li .buttons button svg .fill {
+	ul.todo li .buttons button.remove svg .fill {
 		fill: #c0cecb;
 	}
 	
-	ul.todo li .buttons button:hover svg .fill {
+	ul.todo li .buttons button.remove:hover svg .fill {
 		fill: #e85656;
 	}
 	
@@ -193,7 +204,8 @@
 		right: 50px;
 	}
 	
-	ul.todo li .dateDisplay date {
+	ul.todo li .dateDisplay p {
 		width: 100px;
-		height: 50px;	
+		height: 50px;
+		padding: 14px 0 14px 14px;
 	}
