@@ -5,12 +5,13 @@ var removeSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 document.getElementById('add').addEventListener('click', function() {
 	var value = document.getElementById('item').value;
 	var dateValue = document.getElementById('date').value;
-	dateValue = dateValue.toString();
-	if(value) {
+	if(value && dateValue) {
 		addItem(value, dateValue);
+		
+		// Resets input value
+		document.getElementById('item').value = "";
+		document.getElementById('date').value = "";
 	}
-	// Resets input value
-	document.getElementById('item').value = "";
 });
 
 // Add item to ul
