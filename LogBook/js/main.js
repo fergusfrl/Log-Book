@@ -4,15 +4,17 @@ var removeSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 // Clicked add button
 document.getElementById('add').addEventListener('click', function() {
 	var value = document.getElementById('item').value;
+	var dateValue = document.getElementById('date').value;
+	dateValue = dateValue.toString();
 	if(value) {
-		addItem(value);
+		addItem(value, dateValue);
 	}
 	// Resets input value
 	document.getElementById('item').value = "";
 });
 
 // Add item to ul
-function addItem(text){
+function addItem(text, dateValue){
 	var list = document.getElementById('demo');
 	
 	var item = document.createElement('li');
@@ -25,7 +27,17 @@ function addItem(text){
 	remove.classList.add('remove');
 	remove.innerHTML = removeSVG;
 	
+	// Input date
+	var dateDisplay = document.createElement('div');
+	dateDisplay.classList.add('dateDisplay');
+	
+	var date = document.createElement('P');
+	date.classList.add('date');
+	date.innerHTML = dateValue;
+	
+	dateDisplay.appendChild(date);
 	buttons.appendChild(remove);
+	item.appendChild(dateDisplay);
 	item.appendChild(buttons);
 	
 	// Delete item with delete button
